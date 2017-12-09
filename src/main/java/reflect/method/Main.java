@@ -17,6 +17,10 @@ import java.lang.reflect.Method;
 public class Main {
     public static void main(String[] args) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+
+        System.out.println("AppClassLoader:"+classLoader);
+        System.out.println("ExtClassLoader:"+classLoader.getParent());
+        System.out.println("根装载器:"+classLoader.getParent().getParent());
         try {
             Class clazz = classLoader.loadClass("reflect.classmethod.Car");
 
@@ -50,6 +54,10 @@ public class Main {
             field.setAccessible(true);
             field.set(car,"field name");
             System.out.println(car.getName());
+
+            Field field1 = clazz.getDeclaredField("num");
+            field1.set(car,"12");
+            System.out.println(car.getNum());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (NoSuchMethodException e) {

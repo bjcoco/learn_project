@@ -49,9 +49,9 @@ public class Car {
         return num;
     }
 
-    public void setNum(String num) {
-        this.num = num;
-    }
+//    public void setNum(String num) {
+//        this.num = num;
+//    }
 
     @Override
     public boolean equals(Object o) {

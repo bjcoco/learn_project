@@ -5,6 +5,7 @@ import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import reflect.classmethod.AnimalBean;
 import reflect.classmethod.CarBean;
 
 /**
@@ -22,7 +23,13 @@ public class BeanFactoryTest {
         System.out.println("init beanFactory");
 
         CarBean car = beanFactory.getBean("car", CarBean.class);
+        System.out.println(car);
         System.out.println(car.getName());
         System.out.println(car.getColor());
+
+        AnimalBean animal = beanFactory.getBean("animal", AnimalBean.class);
+        System.out.println(animal.getClassName());
+        System.out.println(animal.getColor());
+        System.out.println(animal.getNum());
     }
 }

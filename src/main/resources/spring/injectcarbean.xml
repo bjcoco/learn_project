@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  @(#) injectcarbean.xml 1.0 2017/12/10
+  ~
+  ~  Copyright (c) 2017-2020 coco All Rights Reserved.
+  ~  PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  ~  Author Email: heke_coco@126.com
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--无参构造函数-->
+    <bean id="car" class="inject.Car"
+        p:brand="brand"
+          p:color="color"
+    />
+
+    <!--有参构造函数 位置索引及入参类型确定构造函数-->
+    <bean id="car2" class="inject.Car">
+        <constructor-arg index="0" type="java.lang.String" value="carbarnd"/>
+        <constructor-arg index="1" type="java.lang.String" value="carcolro"/>
+    </bean>
+</beans>

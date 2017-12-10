@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  @(#) beanlifecycle.xml 1.0 2017/12/10
+  ~
+  ~  Copyright (c) 2017-2020 coco All Rights Reserved.
+  ~  PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  ~  Author Email: heke_coco@126.com
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="car" class="lifecycle.Car"
+        init-method="myInit"
+          destroy-method="myDestory"
+          p:brand="凯德拉克"
+          p:maxSpeed="200"
+          scope="prototype"
+    />
+
+
+</beans>

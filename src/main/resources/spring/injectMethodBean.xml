@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  @(#) injectMethodBean.xml 1.0 2017/12/12
+  ~
+  ~  Copyright (c) 2017-2020 coco All Rights Reserved.
+  ~  PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  ~  Author Email: heke_coco@126.com
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="inject.method.Car"
+        p:brand="宝马"
+          p:color="红色"
+          scope="prototype"
+    />
+
+    <bean id="boss" class="inject.method.Boss">
+        <lookup-method name="getCar" bean="car"/>
+    </bean>
+</beans>

@@ -8,6 +8,8 @@
 
 package inject;
 
+import java.util.Set;
+
 /**
  * @author heke ,2017/12/10:15:24
  * @version 1.0.0
@@ -17,12 +19,22 @@ public class Car {
 
     private String color;
 
+    private Person person;
+
+    private Set set;
+
     public Car() {
     }
 
     public Car(String brand, String color) {
         this.brand = brand;
         this.color = color;
+    }
+
+    public Car(String brand, String color, Person person) {
+        this.brand = brand;
+        this.color = color;
+        this.person = person;
     }
 
     public String getBrand() {
@@ -39,5 +51,21 @@ public class Car {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Set getSet() {
+        return set;
+    }
+
+    public void setSet(Set set) {
+        this.set = set;
     }
 }

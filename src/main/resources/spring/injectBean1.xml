@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  @(#) injectBean1.xml 1.0 2017/12/12
+  ~
+  ~  Copyright (c) 2017-2020 coco All Rights Reserved.
+  ~  PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  ~  Author Email: heke_coco@126.com
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="inject.Car">
+        <property name="brand"><value><![CDATA[<奔驰'"&>]]></value></property>
+        <property name="color"><value>黑色</value></property>
+        <property name="person"><ref bean="person"></ref> </property>
+    </bean>
+
+    <bean id="person" class="inject.Person">
+        <property name="name"><value>coco</value></property>
+        <property name="sex"><value>女</value></property>
+        <property name="car" ref="car"/>
+    </bean>
+</beans>

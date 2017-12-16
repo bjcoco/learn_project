@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--可以不手动注入编辑器，是因为spring支持命名规范，会自动查找car的编辑器carEditor-->
+    <!--<bean id="carEditor" class="spring.chapter.five.editor.CarEditor"/>-->
+
+    <!--<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">-->
+        <!--<property name="customEditors">-->
+            <!--<map>-->
+                <!--&lt;!&ndash;&lt;!&ndash;属性编辑器对应的属性类型&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<entry key="spring.chapter.five.editor.Car">&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;对应的属性编辑器的Bean&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;<bean class="spring.chapter.five.editor.CarEditor"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;</entry>&ndash;&gt;-->
+                <!--<entry key="spring.chapter.five.editor.Car" value-ref="carEditor"/>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <bean id="boss" class="spring.chapter.five.editor.Boss">
+        <property name="bossName" value="bossname"/>
+        <property name="car" value="奔驰,红色"/>
+    </bean>
+</beans>

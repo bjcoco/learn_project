@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  */
 public class Test {
     public static void main(String[] args) {
-        String reg = "\\s+";
+        String reg = "/+.*";
 
         String str = "";
        /* Pattern pattern = Pattern.compile(reg);

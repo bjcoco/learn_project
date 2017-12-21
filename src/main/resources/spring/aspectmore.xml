@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  @(#) aspectmore.xml 1.0 2017/12/21
+  ~
+  ~  Copyright (c) 2017-2020 coco All Rights Reserved.
+  ~  PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  ~  Author Email: heke_coco@126.com
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="waiterMethod" class="spring.chapter.seven.aspect.more.WaiterMethod"/>
+    <!--<bean id="aspectMethod" class="spring.chapter.seven.aspect.more.AspectMethod"/>-->
+    <!--<bean class="spring.chapter.seven.aspect.more.AspectMethod"/>-->
+
+    <context:component-scan base-package="spring.chapter.seven"/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!--<aop:config proxy-target-class="true">
+        <aop:aspect ref="aspectMethod">
+            <aop:around method="before" pointcut="execution(* *(..))"/>
+        </aop:aspect>
+    </aop:config>-->
+</beans>

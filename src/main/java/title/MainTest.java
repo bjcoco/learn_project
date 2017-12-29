@@ -13,4 +13,16 @@ package title;
  * @version 1.0.0
  */
 public class MainTest {
+    public static void main(String[] args) {
+        int a = 100;
+        if (a > 10){
+            System.out.println("no 1");
+        } else if (a> 20) {
+            System.out.println("no 2");
+        } else if (a > 30) {
+            System.out.println("no 3");
+        } else {
+            System.out.println("no 4");
+        }
+    }
 }
